@@ -1,6 +1,6 @@
 import React from 'react';
 import { CSSTransition } from 'react-transition-group';
-import { SignView } from '@adcimon/react-components';
+import { SignView, Icons } from '@adcimon/react-components';
 import { Button, TextInput, Link } from '@adcimon/react-components';
 import { AppViewType, AppStateType } from '../../AppState';
 import '../../styles/FadeAnimation.css';
@@ -74,9 +74,11 @@ export class SignInView extends React.Component<ISignInViewProps, ISignInViewSta
 
 						<TextInput
 							label='Email'
+							icon={<Icons.EnvelopeOutline/>}
 							className='w-full'/>
 						<TextInput
 							label='Password'
+							icon={<Icons.KeyOutline/>}
 							type='password'
 							className='w-full mt-2'/>
 
