@@ -19,10 +19,8 @@ export class IconsView extends React.Component<any, IIconsViewState>
 		this.setState({ starred: !this.state.starred });
 	}
 
-	private renderIcon = (icon: React.ReactNode) =>
+	private renderIcon = (icon: JSX.Element, name: string) =>
 	{
-		const name: string = (icon as any).type.name;
-
 		return (
 			<>
 				<div
@@ -44,10 +42,12 @@ export class IconsView extends React.Component<any, IIconsViewState>
 	{
 		const iconStyle = { width: '40px', height: '40px' };
 
+		const names: string[] = [];
 		const icons: JSX.Element[] = [];
 		Object.keys(Icons).forEach((key: string, index: number) =>
 		{
 			const Icon = Icons[key as keyof typeof Icons];
+			names.push(key);
 			icons.push(<Icon style={iconStyle}/>);
 		});
 
@@ -65,7 +65,7 @@ export class IconsView extends React.Component<any, IIconsViewState>
 				<div
 					className='flex flex-wrap items-center justify-center gap-10'>
 					{
-						icons.map((icon: JSX.Element, index: number) => this.renderIcon(icon))
+						icons.map((icon: JSX.Element, index: number) => this.renderIcon(icon, names[index]))
 					}
 				</div>
 			</>
