@@ -9,34 +9,32 @@ import '@adcimon/react-components/styles/ThemeDark.css';
 import '@adcimon/react-components/styles/Font.css';
 import './AppView.css';
 
-interface IAppViewProps
-{
+interface IAppViewProps {
 	appState: AppStateType;
 	setAppState: (state: AppStateType) => void;
 }
 
-export class AppView extends React.Component<IAppViewProps>
-{
-	public render = () =>
-	{
-		const view = () =>
-		{
-			switch( this.props.appState.appView )
-			{
-				case AppViewType.SignIn: return <SignInViewContainer/>;
-				case AppViewType.SignUp: return <SignUpViewContainer/>;
-				case AppViewType.RecoverPassword: return <RecoverPasswordViewContainer/>;
-				case AppViewType.Main: return <MainViewContainer/>;
-				default: return <NotFoundView/>;
+export class AppView extends React.Component<IAppViewProps> {
+	public render = () => {
+		const view = () => {
+			switch (this.props.appState.appView) {
+				case AppViewType.SignIn:
+					return <SignInViewContainer />;
+				case AppViewType.SignUp:
+					return <SignUpViewContainer />;
+				case AppViewType.RecoverPassword:
+					return <RecoverPasswordViewContainer />;
+				case AppViewType.Main:
+					return <MainViewContainer />;
+				default:
+					return <NotFoundView />;
 			}
-		}
+		};
 
 		return (
 			<>
-				<div className='flex items-center justify-center h-screen bg-base-900'>
-					{ view() }
-				</div>
+				<div className='flex items-center justify-center h-screen bg-base-900'>{view()}</div>
 			</>
 		);
-	}
+	};
 }

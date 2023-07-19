@@ -2,8 +2,7 @@ import { useRecoilState } from 'recoil';
 import { SignInView } from './SignInView';
 import { AppState } from '../../AppState';
 
-export const SignInViewContainer = (props: any = {}) =>
-{
+export const SignInViewContainer = (props: any = {}) => {
 	const [appState, setAppState] = useRecoilState(AppState);
 
 	return (
@@ -13,4 +12,4 @@ export const SignInViewContainer = (props: any = {}) =>
 			setAppState={setAppState}
 		/>
 	);
-}
+};

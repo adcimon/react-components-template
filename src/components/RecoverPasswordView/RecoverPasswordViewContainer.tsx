@@ -2,8 +2,7 @@ import { useRecoilState } from 'recoil';
 import { RecoverPasswordView } from './RecoverPasswordView';
 import { AppState } from '../../AppState';
 
-export const RecoverPasswordViewContainer = (props: any = {}) =>
-{
+export const RecoverPasswordViewContainer = (props: any = {}) => {
 	const [appState, setAppState] = useRecoilState(AppState);
 
 	return (
@@ -13,4 +12,4 @@ export const RecoverPasswordViewContainer = (props: any = {}) =>
 			setAppState={setAppState}
 		/>
 	);
-}
+};

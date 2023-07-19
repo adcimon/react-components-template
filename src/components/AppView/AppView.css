@@ -2,8 +2,7 @@
  * @NOTE: Prepend a '~' to css file paths that are in node_modules (https://github.com/webpack-contrib/sass-loader#imports).
  */
 
-body
-{
+body {
 	height: 100vh;
 	position: relative;
 	margin: 0;

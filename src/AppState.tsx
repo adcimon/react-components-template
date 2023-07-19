@@ -1,35 +1,30 @@
 import { atom } from 'recoil';
 
-export enum AppViewType
-{
+export enum AppViewType {
 	SignIn,
 	SignUp,
 	RecoverPassword,
-	Main
+	Main,
 }
 
-export enum ContentViewType
-{
+export enum ContentViewType {
 	Cards,
 	Modals,
 	Tables,
-	Icons
+	Icons,
 }
 
-export type AppStateType =
-{
+export type AppStateType = {
 	appView: AppViewType;
 	sidebarVisible: boolean;
 	contentView: ContentViewType;
 };
 
-export const AppState = atom<AppStateType>(
-{
-    key: 'AppState',
-    default:
-    {
+export const AppState = atom<AppStateType>({
+	key: 'AppState',
+	default: {
 		appView: AppViewType.SignIn,
 		sidebarVisible: true,
-		contentView: ContentViewType.Cards
-    }
+		contentView: ContentViewType.Cards,
+	},
 });

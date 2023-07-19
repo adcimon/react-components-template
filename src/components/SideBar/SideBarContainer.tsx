@@ -2,8 +2,7 @@ import { useRecoilState } from 'recoil';
 import { SideBar } from './SideBar';
 import { AppState } from '../../AppState';
 
-export const SideBarContainer = (props: any = {}) =>
-{
+export const SideBarContainer = (props: any = {}) => {
 	const [appState, setAppState] = useRecoilState(AppState);
 
 	return (
@@ -13,4 +12,4 @@ export const SideBarContainer = (props: any = {}) =>
 			setAppState={setAppState}
 		/>
 	);
-}
+};

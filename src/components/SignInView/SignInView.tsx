@@ -6,58 +6,47 @@ import { AppViewType, AppStateType } from '../../AppState';
 import '../../styles/FadeAnimation.css';
 import image from '../../assets/images/earth_computer.jpg';
 
-interface ISignInViewProps
-{
+interface ISignInViewProps {
 	appState: AppStateType;
 	setAppState: (state: AppStateType) => void;
 }
 
-interface ISignInViewState
-{
+interface ISignInViewState {
 	visible: boolean;
 	transitionView: AppViewType;
 }
 
-export class SignInView extends React.Component<ISignInViewProps, ISignInViewState>
-{
-	constructor( props: ISignInViewProps )
-	{
+export class SignInView extends React.Component<ISignInViewProps, ISignInViewState> {
+	constructor(props: ISignInViewProps) {
 		super(props);
 
-		this.state =
-		{
+		this.state = {
 			visible: false,
-			transitionView: AppViewType.SignIn
+			transitionView: AppViewType.SignIn,
 		};
 	}
 
-	componentDidMount(): void
-	{
+	componentDidMount(): void {
 		this.setState({ visible: true });
 	}
 
-	private handleClickSignIn = () =>
-	{
+	private handleClickSignIn = () => {
 		this.setState({ visible: false, transitionView: AppViewType.Main });
-	}
+	};
 
-	private handleClickSignUp = () =>
-	{
+	private handleClickSignUp = () => {
 		this.setState({ visible: false, transitionView: AppViewType.SignUp });
-	}
+	};
 
-	private handleClickRecoverPassword = () =>
-	{
+	private handleClickRecoverPassword = () => {
 		this.setState({ visible: false, transitionView: AppViewType.RecoverPassword });
-	}
+	};
 
-	private handleExited = () =>
-	{
+	private handleExited = () => {
 		this.props.setAppState({ ...this.props.appState, appView: this.state.transitionView });
-	}
+	};
 
-	public render = () =>
-	{
+	public render = () => {
 		return (
 			<>
 				<CSSTransition
@@ -65,45 +54,45 @@ export class SignInView extends React.Component<ISignInViewProps, ISignInViewSta
 					timeout={500}
 					classNames='fade'
 					onExited={() => this.handleExited()}>
-					<SignView
-						source={image}>
-						<h1
-							className='mb-4 text-xl font-semibold text-base-200'>
-							Template
-						</h1>
+					<SignView source={image}>
+						<h1 className='mb-4 text-xl font-semibold text-base-200'>Template</h1>
 
 						<TextInput
 							label='Email'
-							icon={<Icons.EnvelopeOutline/>}
-							className='w-full'/>
+							icon={<Icons.EnvelopeOutline />}
+							className='w-full'
+						/>
 						<TextInput
 							label='Password'
-							icon={<Icons.KeyOutline/>}
+							icon={<Icons.KeyOutline />}
 							type='password'
-							className='w-full mt-2'/>
+							className='w-full mt-2'
+						/>
 
 						<Button
 							label='Sign In'
 							onClick={this.handleClickSignIn}
-							className='w-full mt-4'/>
+							className='w-full mt-4'
+						/>
 
-						<hr className='my-8'/>
+						<hr className='my-8' />
 
 						<Button
 							label='Create an account'
 							onClick={this.handleClickSignUp}
-							className='w-full mt-4'/>
+							className='w-full mt-4'
+						/>
 
-						<p
-							className='mt-4'>
+						<p className='mt-4'>
 							<Link
 								label={'Forgot your password?'}
 								ref='#'
-								onClick={this.handleClickRecoverPassword}/>
+								onClick={this.handleClickRecoverPassword}
+							/>
 						</p>
 					</SignView>
 				</CSSTransition>
 			</>
 		);
-	}
+	};
 }

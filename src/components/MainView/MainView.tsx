@@ -5,43 +5,35 @@ import { SideBarContainer } from '../SideBar/SideBarContainer';
 import { ContentViewContainer } from '../ContentView/ContentViewContainer';
 import { AppViewType, AppStateType } from '../../AppState';
 
-interface IMainViewProps
-{
+interface IMainViewProps {
 	appState: AppStateType;
 	setAppState: (state: AppStateType) => void;
 }
 
-interface IMainViewState
-{
+interface IMainViewState {
 	visible: boolean;
 }
 
-export class MainView extends React.Component<IMainViewProps, IMainViewState>
-{
-	constructor( props: IMainViewProps )
-	{
+export class MainView extends React.Component<IMainViewProps, IMainViewState> {
+	constructor(props: IMainViewProps) {
 		super(props);
 
 		this.state = { visible: false };
 	}
 
-	componentDidMount(): void
-	{
+	componentDidMount(): void {
 		this.setState({ visible: true });
 	}
 
-	private handleExited = () =>
-	{
+	private handleExited = () => {
 		this.props.setAppState({ ...this.props.appState, appView: AppViewType.SignIn });
-	}
+	};
 
-	private handleClickSignOut = () =>
-	{
+	private handleClickSignOut = () => {
 		this.setState({ visible: false });
-	}
+	};
 
-	public render = () =>
-	{
+	public render = () => {
 		return (
 			<>
 				<CSSTransition
@@ -49,20 +41,15 @@ export class MainView extends React.Component<IMainViewProps, IMainViewState>
 					timeout={500}
 					classNames='fade'
 					onExited={() => this.handleExited()}>
-					<div
-						className='flex flex-col w-full h-full'>
+					<div className='flex flex-col w-full h-full'>
 						<TopBarContainer onSignOut={this.handleClickSignOut}></TopBarContainer>
-						<div
-							className='flex flex-row w-full h-full'>
-							{
-								(this.props.appState.sidebarVisible) &&
-								<SideBarContainer></SideBarContainer>
-							}
+						<div className='flex flex-row w-full h-full'>
+							{this.props.appState.sidebarVisible && <SideBarContainer></SideBarContainer>}
 							<ContentViewContainer></ContentViewContainer>
 						</div>
 					</div>
 				</CSSTransition>
 			</>
 		);
-	}
+	};
 }
