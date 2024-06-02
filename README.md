@@ -1,4 +1,4 @@
-# React Template
+# React Components Template
 
 Powered by [Create React App](https://github.com/facebook/create-react-app).
 
