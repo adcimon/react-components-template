@@ -1,8 +1,8 @@
 {
-	"name": "react-template",
+	"name": "react-components-template",
 	"version": "0.1.0",
 	"private": true,
-	"homepage": "https://adcimon.github.io/react-template",
+	"homepage": "https://adcimon.github.io/react-components-template",
 	"dependencies": {
 		"@adcimon/react-components": "^1.1.5",
 		"@testing-library/jest-dom": "^5.16.5",
