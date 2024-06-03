@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/react-template/static/css/main.16b89b22.css",
-    "main.js": "/react-template/static/js/main.7103c528.js",
-    "static/js/787.fa3c4679.chunk.js": "/react-template/static/js/787.fa3c4679.chunk.js",
-    "static/media/404.png": "/react-template/static/media/404.0a1c447b580dc258207f.png",
-    "static/media/earth_computer.jpg": "/react-template/static/media/earth_computer.1c458c41338d49a5eb0a.jpg",
-    "index.html": "/react-template/index.html",
-    "main.16b89b22.css.map": "/react-template/static/css/main.16b89b22.css.map",
-    "main.7103c528.js.map": "/react-template/static/js/main.7103c528.js.map",
-    "787.fa3c4679.chunk.js.map": "/react-template/static/js/787.fa3c4679.chunk.js.map"
+    "main.css": "/react-components-template/static/css/main.16b89b22.css",
+    "main.js": "/react-components-template/static/js/main.9311416c.js",
+    "static/js/787.92310a80.chunk.js": "/react-components-template/static/js/787.92310a80.chunk.js",
+    "static/media/404.png": "/react-components-template/static/media/404.0a1c447b580dc258207f.png",
+    "static/media/earth_computer.jpg": "/react-components-template/static/media/earth_computer.1c458c41338d49a5eb0a.jpg",
+    "index.html": "/react-components-template/index.html",
+    "main.16b89b22.css.map": "/react-components-template/static/css/main.16b89b22.css.map",
+    "main.9311416c.js.map": "/react-components-template/static/js/main.9311416c.js.map",
+    "787.92310a80.chunk.js.map": "/react-components-template/static/js/787.92310a80.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.16b89b22.css",
-    "static/js/main.7103c528.js"
+    "static/js/main.9311416c.js"
   ]
 }
