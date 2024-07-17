@@ -1,23 +1,18 @@
 # React Components Template
 
-Powered by [Create React App](https://github.com/facebook/create-react-app).
-
-## Install
+Bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Install.
 ```
 npm install
 ```
 
-## Run
-
-Run the app in the `dev` environment.
+Run.
 ```
 npm start
 ```
 
-## Build
-
+Build.
 ```
 npm run build
 ```
